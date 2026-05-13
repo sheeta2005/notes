@@ -3,14 +3,8 @@
 <el-container>
   <el-header>Header</el-header>
   <el-container>
-    <el-aside  width="200px">
-      <router-link to="/c/p1">p1</router-link><br>
-      <router-link to="/c/p2">p2</router-link><br>
-      <router-link to="/c/p3">p3</router-link><br>
-    </el-aside>
-    <el-main>
-      <router-view/>
-    </el-main>
+    <el-aside width="200px">Aside</el-aside>
+    <el-main>Main</el-main>
   </el-container>
 </el-container>
 

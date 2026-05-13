@@ -21,7 +21,23 @@ const routes = [
       {
     path: '/c',
     //相对性能更高，懒导入
-    component: ()=> import(/* webpackChunkName: "c" */'../views/container/ContainerView.vue')
+    component: ()=> import(/* webpackChunkName: "c" */'../views/container/ContainerView.vue'),
+        //直接重导向内侧栏
+        redirect: '/c/p1',
+        children: [
+          {
+            path: '/c/p1',
+            component: ()=> import('../views/container/p1View.vue'),
+          },
+          {
+            path: '/c/p2',
+            component: ()=> import('../views/container/p2View.vue'),
+          },
+          {
+            path: '/c/p3',
+            component: ()=> import('../views/container/p3View.vue'),
+          }
+        ]
   },
   {
     path: '/:catchAll(.*)',
