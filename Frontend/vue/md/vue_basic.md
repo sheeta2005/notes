@@ -54,18 +54,18 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  plugins: [vue()],
+    plugins: [vue()],
 
-  // 代理配置
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080', // 后端地址
-        changeOrigin: true,             // 开启跨域
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
+    // 代理配置
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8080', // 后端地址
+                changeOrigin: true,             // 开启跨域
+                rewrite: (path) => path.replace(/^\/api/, '')
+            }
+        }
     }
-  }
 })
 ```
 
@@ -85,17 +85,17 @@ export default defineConfig({
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      // 数据
+  export default {
+    data() {
+      return {
+        // 数据
+      }
     }
   }
-}
 </script>
 
 <style>
-/* 样式 */
+  /* 样式 */
 </style>
 ```
 
@@ -109,15 +109,22 @@ export default {
 
 ```js
 data() {
-  return {
-    name: "张三"
-  }
+    return {
+        name: "张三"
+    }
 }
 ```
 
 ---
 
-## 2. 属性绑定
+## 2. 属性绑定（v-bind）
+完整写法：
+```vue
+<img v-bind:src="imgUrl">
+<input v-bind:value="msg">
+```
+
+简写：
 ```vue
 <img :src="imgUrl">
 <input :value="msg">
@@ -125,7 +132,13 @@ data() {
 
 ---
 
-## 3. 事件绑定
+## 3. 事件绑定（v-on）
+完整写法：
+```vue
+<button v-on:click="handleClick">按钮</button>
+```
+
+简写：
 ```vue
 <button @click="handleClick">按钮</button>
 ```
@@ -138,7 +151,7 @@ methods: {
 
 ---
 
-## 4. 双向绑定（表单）
+## 4. 双向绑定（表单 v-model）
 ```vue
 <input v-model="keyword">
 ```
@@ -213,5 +226,5 @@ axios.get("/api/order/list")
 1. **跨域**：浏览器同源策略导致，前端不能直接访问不同端口/域名的后端
 2. **解决方式**：Vite 配置 `proxy` 代理
 3. **Vue 组件**：`<template>` + `<script>` + `<style>`
-4. **常用指令**：`{{}}` `:src` `@click` `v-model` `v-if` `v-for`
+4. **常用指令**：`{{}}` `v-bind/:属性` `v-on/@事件` `v-model` `v-if` `v-for`
 5. **Axios**：前端请求后端接口工具
