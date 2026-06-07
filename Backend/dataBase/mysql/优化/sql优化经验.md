@@ -1,5 +1,5 @@
 ---
-title: MySQL优化经验与常见问题笔记
+title: sql优化经验
 date: 2026-06-07
 tags: [数据库, MySQL, 性能优化]
 categories: [后端技术]
@@ -8,7 +8,7 @@ layout: doc
 outline: deep
 ---
 
-# MySQL优化经验与常见问题笔记
+# sql优化经验
 
 ## 一、SQL优化的整体思路
 SQL优化主要从以下几个层面展开：
