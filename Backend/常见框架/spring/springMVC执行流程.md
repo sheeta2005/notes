@@ -1,5 +1,5 @@
 ---
-title: 执行流程
+title: springMVC执行流程
 date: 2026-06-08
 tags: [Java, SpringMVC, 执行流程, Web框架]
 categories: [后端技术]
@@ -8,7 +8,7 @@ layout: doc
 outline: deep
 ---
 
-# 执行流程
+#springMVC 执行流程
 
 ## 一、核心基础概念补充
 ### 1. 什么是SpringMVC？
